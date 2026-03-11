@@ -50,6 +50,7 @@ body {
   background-color: var(--color);
   transform-style: preserve-3d;
 
+  /* Back of face */
   &::before {
     content: "";
     position: absolute;
