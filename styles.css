@@ -18,6 +18,8 @@ body {
   }
 }
 
+/* Container */
+
 .container {
   --size: 6rem;
   --thickness: calc(var(--size) * 0.1);
@@ -30,6 +32,8 @@ body {
   transform-style: preserve-3d;
   animation: rotate 5s linear infinite;
 }
+
+/* Circle */
 
 .circle {
   position: absolute;
@@ -46,19 +50,19 @@ body {
   transform: translateZ(calc(var(--thickness) * -0.5)) rotateY(180deg);
 }
 
-.circle__side {
+.circle__face {
   position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 50%;
 }
 
-.circle__side--front {
+.circle__face--front {
   background-color: var(--color);
   transform: translateZ(0.1px);
 }
 
-.circle__side--back {
+.circle__face--back {
   background-color: var(--color-side);
 }
 
