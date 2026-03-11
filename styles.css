@@ -1,0 +1,74 @@
+:root {
+  --color-background: #fff;
+  --color-primary: #ccc;
+  --color-primary-darken: #aaa;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+  background-color: var(--color-background);
+}
+
+@keyframes rotate {
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.container {
+  --size: 6rem;
+  --thickness: calc(var(--size) * 0.1);
+  --color: var(--color-primary);
+  --color-side: var(--color-primary-darken);
+
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  transform-style: preserve-3d;
+  animation: rotate 5s linear infinite;
+}
+
+.circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.circle--front {
+  transform: translateZ(calc(var(--thickness) * 0.5));
+}
+
+.circle--back {
+  transform: translateZ(calc(var(--thickness) * -0.5)) rotateY(180deg);
+}
+
+.circle__side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.circle__side--front {
+  background-color: var(--color);
+  transform: translateZ(0.1px);
+}
+
+.circle__side--back {
+  background-color: var(--color-side);
+}
+
+/* Side */
+
+.circle-side {
+  position: absolute;
+  left: 50%;
+  width: var(--thickness);
+  height: 100%;
+  transform: translateX(-50%) rotateY(90deg);
+  background-color: var(--color-side);
+}
